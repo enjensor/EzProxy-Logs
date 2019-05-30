@@ -8,6 +8,8 @@
 # This script does a quick visualisation of the ratio of login types (failure, login, intruder, logout, and success) that your audit log has recorded. Make sure you place the audit logs into the /data folder and that they are named in the syntax of "YYYYMMDD.txt" (for example, "20190314.txt"). These audit files are usually in the /audit sub-folder of your EzProxy application folder on the server. Your audit logs will need to be in the following format:
 # 
 # > **%h %{ezproxy-session}i %u %t "%r" %s %b**
+# 
+# Once you have some files in the approprate data folders, *run cells 1 through to 7*. If there are no warnings or errors, then you will be presented with a calendar dropdown menu, from which you can select the date for audting. Once you select a date, a pie graph breaking down the types of activities found in your logs appears.
 
 # # Activate all cells
 
@@ -119,7 +121,7 @@ now = datetime.utcnow() - timedelta(days=1)
 aDates = widgets.DatePicker(
     description='Audit Date',
     disabled=False,
-    value=datetime(now.year,now.month,now.day)
+#    value=datetime(now.year,now.month,now.day)
 )
 aDates.observe(on_date,names='value')
 

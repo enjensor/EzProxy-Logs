@@ -19,7 +19,7 @@
 
 # # Activate all cells
 
-# In[1]:
+# In[9]:
 
 
 import os
@@ -226,7 +226,7 @@ now = datetime.utcnow() - timedelta(days=1)
 aDates = widgets.DatePicker(
     description='Audit Date',
     disabled=False,
-    value=datetime(now.year,now.month,now.day)
+#    value=datetime(now.year,now.month,now.day)
 )
 aDates.observe(on_date,names='value')
 

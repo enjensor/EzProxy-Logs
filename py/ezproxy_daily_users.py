@@ -21,7 +21,7 @@
 
 # # Activate all cells
 
-# In[1]:
+# In[18]:
 
 
 import os
@@ -29,7 +29,7 @@ get_ipython().system('jupyter nbconvert --to script ezproxy_daily_users.ipynb')
 os.rename("./ezproxy_daily_users.py", "./py/ezproxy_daily_users.py")
 
 
-# In[2]:
+# In[11]:
 
 
 # FRESH ANACONDA INSTALL
@@ -52,7 +52,7 @@ os.rename("./ezproxy_daily_users.py", "./py/ezproxy_daily_users.py")
 # jupyter lab build
 
 
-# In[3]:
+# In[12]:
 
 
 import numpy as np
@@ -79,7 +79,7 @@ from mpl_toolkits.basemap import Basemap
 pd.set_option('display.max_colwidth', -1)
 
 
-# In[4]:
+# In[13]:
 
 
 def on_date(change):
@@ -137,7 +137,7 @@ def on_date(change):
         clear_output()
 
 
-# In[5]:
+# In[14]:
 
 
 global aDates
@@ -145,12 +145,12 @@ now = datetime.utcnow() - timedelta(days=1)
 aDates = widgets.DatePicker(
     description='Audit Date',
     disabled=False,
-    value=datetime(now.year,now.month,now.day)
+#    value=datetime(now.year,now.month,now.day)
 )
 aDates.observe(on_date,names='value')
 
 
-# In[6]:
+# In[15]:
 
 
 def on_user(change):
@@ -338,7 +338,7 @@ def on_user(change):
         plt.show();
 
 
-# In[7]:
+# In[16]:
 
 
 def on_platform(b):
@@ -473,7 +473,7 @@ def on_platform(b):
                 myError = "An error"
 
 
-# In[8]:
+# In[17]:
 
 
 outZ = widgets.Output(layout={'border': '0px solid #777777', 'height':'2.3em', 'padding': '0px', 'width':'99%'})

@@ -19,7 +19,7 @@
 
 # # Activate all cells
 
-# In[1]:
+# In[10]:
 
 
 import os
@@ -533,7 +533,7 @@ now = datetime.utcnow() - timedelta(days=1)
 aDates = widgets.DatePicker(
     description='Log Date',
     disabled=False,
-    value=datetime(now.year,now.month,now.day)
+#    value=datetime(now.year,now.month,now.day)
 )
 aDates.observe(on_date,names='value')
 
@@ -571,19 +571,19 @@ with outA:
 # In[ ]:
 
 
-#import imageio
-#import fnmatch
-#import moviepy.editor as mp
-#folders = ["ezproxy_australia","ezproxy_daily_stacked","ezproxy_distribution",
-#           "ezproxy_resource_access","ezproxy_resources_2019","ezproxy_resources_use"]
-#for f in folders:
-#    print(f)
-#    images = []
-#    for file in sorted(os.listdir('./imgs')):
-#        if fnmatch.fnmatch(file, f+'*'):
-#            images.append(imageio.imread("./imgs/"+file))
-#    imageio.mimsave('./mvs/'+f+'.gif', images, duration=0.10)
-#    clip = mp.VideoFileClip("./mvs/"+f+".gif")
-#    clip.write_videofile("./mvs/"+f+".mp4")
-#print("done")
+import imageio
+import fnmatch
+import moviepy.editor as mp
+folders = ["ezproxy_australia","ezproxy_daily_stacked","ezproxy_distribution",
+           "ezproxy_resource_access","ezproxy_resources_2019","ezproxy_resources_use"]
+for f in folders:
+    print(f)
+    images = []
+    for file in sorted(os.listdir('./imgs')):
+        if fnmatch.fnmatch(file, f+'*'):
+            images.append(imageio.imread("./imgs/"+file))
+    imageio.mimsave('./mvs/'+f+'.gif', images, duration=0.10)
+    clip = mp.VideoFileClip("./mvs/"+f+".gif")
+    clip.write_videofile("./mvs/"+f+".mp4")
+print("done")
 
