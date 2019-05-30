@@ -19,7 +19,7 @@
 
 # # Activate all cells
 
-# In[10]:
+# In[11]:
 
 
 import os
@@ -467,9 +467,9 @@ def on_stacked(b):
     global tdownloads
     with outK:
         hours = ['00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23']
-        blacklist = pd.read_csv("./data_ips/blacklist.txt", sep=",", header=None, error_bad_lines=False, warn_bad_lines=False)
-        blacklist.columns = ["IRN","IPAddress","OrganisationName","ReportedBy","ThreatType","IsWhiteListed","DateCreated","Notes"]
-        blackips = blacklist["IPAddress"]
+        #blacklist = pd.read_csv("./data_ips/blacklist.txt", sep=",", header=None, error_bad_lines=False, warn_bad_lines=False)
+        #blacklist.columns = ["IRN","IPAddress","OrganisationName","ReportedBy","ThreatType","IsWhiteListed","DateCreated","Notes"]
+        #blackips = blacklist["IPAddress"]
         data3 = pd.DataFrame(data2)
         data3.drop('azone', axis=1, inplace=True)
         data3.drop('url', axis=1, inplace=True)
